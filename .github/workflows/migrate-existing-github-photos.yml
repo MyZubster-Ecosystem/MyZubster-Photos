@@ -2,7 +2,7 @@ name: Migrate existing GitHub photos
 
 on:
   workflow_dispatch:
-  issues:
+  pull_request:
     types: [opened]
 
 permissions:
@@ -10,12 +10,15 @@ permissions:
 
 jobs:
   migrate:
-    if: github.event_name == 'workflow_dispatch' || github.event.issue.title == 'Run sanitized GitHub photo migration'
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.title == 'Migrate existing GitHub photos'
     runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
     steps:
       - name: Checkout photo repository
         uses: actions/checkout@v4
         with:
+          ref: ${{ env.TARGET_BRANCH }}
           path: photos-repo
 
       - name: Checkout MyZubster core
@@ -53,7 +56,7 @@ jobs:
           print(f"Validated {data['count']} migrated photos")
           PY
 
-      - name: Commit migration
+      - name: Commit migration to target branch
         working-directory: photos-repo
         run: |
           if git diff --quiet -- photos metadata/github-core-migration.json; then
@@ -64,4 +67,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add photos metadata/github-core-migration.json
           git commit -m 'feat: migrate sanitized public photos from core'
-          git push origin HEAD:main
+          git push origin "HEAD:${TARGET_BRANCH}"
