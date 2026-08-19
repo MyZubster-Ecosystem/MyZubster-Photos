@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-19T02:22:34.098709+00:00",
+  "source": {
+    "repository": "MyZubster-Ecosystem/myzubster",
+    "branch": "main",
+    "root": "public/media/rimini",
+    "alreadyPublicOnGitHub": true
+  },
+  "destination": "MyZubster-Ecosystem/MyZubster-Photos",
+  "mode": "sanitized-copy",
+  "sourceDeletion": false,
+  "count": 12,
+  "photos": [
+    {
+      "sourcePath": "public/media/rimini/civic/comune-di-rimini/comune-di-rimini-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/civic/comune-di-rimini/comune-di-rimini-001.jpg",
+      "sha256": "5f176295e968d4163d6984615fe1dd35bd87e1600e5c3ef1180134b0f4b3faa7",
+      "sizeBytes": 461306,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/gardens/garden-001/plants/alloro/garden-alloro-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/gardens/garden-001/plants/alloro/garden-alloro-001.jpg",
+      "sha256": "f8de425c21c60b23ac7638308b89d9a88c5dcc5773217fae4fb0d6fb7204df8f",
+      "sizeBytes": 712913,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/gardens/garden-001/plants/banano/garden-banano-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/gardens/garden-001/plants/banano/garden-banano-001.jpg",
+      "sha256": "639a7428b8c70d1361e923b1bf2d074474f0412b9c3403b806b24932b8e0519e",
+      "sizeBytes": 620615,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/gardens/garden-001/plants/papiro/garden-papiro-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/gardens/garden-001/plants/papiro/garden-papiro-001.jpg",
+      "sha256": "62c168fd456adae5388765a0d3e6b73d0ef450388dc8667e21f6bd135bb06b97",
+      "sizeBytes": 764032,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/gardens/garden-001/plants/susino/garden-susino-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/gardens/garden-001/plants/susino/garden-susino-001.jpg",
+      "sha256": "338bef17a21e4cb70438e663d93b262d86072c85476e9c4bfa4359e169733ff6",
+      "sizeBytes": 689478,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/landmarks/fontana-della-pigna/fontana-della-pigna-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/landmarks/fontana-della-pigna/fontana-della-pigna-001.jpg",
+      "sha256": "3ef2fbae7b97524b629d7729f6260d2b3d36b17defbbfb1bebe9a43852feca3e",
+      "sizeBytes": 571976,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/personal/profile/profile-with-chanel-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/personal/profile/profile-with-chanel-001.jpg",
+      "sha256": "7653b3d9728bc7fc3cafcd879800b41a646a6a5c86a1955f359ddebe104db176",
+      "sizeBytes": 662643,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/personal/tattoos/tattoo-127-0-0-1-localhost-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/personal/tattoos/tattoo-127-0-0-1-localhost-001.jpg",
+      "sha256": "98aa9ce0ab5de57d27cd90173f7f29d84cfbbfdd54065dd9c7069e0fca813c8c",
+      "sizeBytes": 335510,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/services/futura-ambiente/futura-ambiente.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/services/futura-ambiente/futura-ambiente.jpg",
+      "sha256": "4940ef4bd097138cbe4872dc5a543bd5fc82b3a3d5dbe5ad8b5cb594b302ed28",
+      "sizeBytes": 696679,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/sky/clouds/rimini-sky-clouds-001.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/sky/clouds/rimini-sky-clouds-001.jpg",
+      "sha256": "b046966000fa0626917ff64c81d11a36f7aa74921f036ca756482f49ad4df68f",
+      "sizeBytes": 285304,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/squares/piazza-ferrari/piazza-ferrari.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/squares/piazza-ferrari/piazza-ferrari.jpg",
+      "sha256": "7b8f9a2282a26c6626e13bf12fe3e6f30a00e7de92bbc390c8eb91be21b453b1",
+      "sizeBytes": 843994,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    },
+    {
+      "sourcePath": "public/media/rimini/streets/via-clodia/via-clodia.jpg",
+      "destinationPath": "photos/italy/emilia-romagna/rimini/streets/via-clodia/via-clodia.jpg",
+      "sha256": "134dabc04222c5dc191bbd61aa9334e37e4b2cedbd095690fcbe1976a404996b",
+      "sizeBytes": 527314,
+      "privacy": {
+        "exifStripped": true,
+        "gpsMetadataPublished": false
+      }
+    }
+  ]
+}
