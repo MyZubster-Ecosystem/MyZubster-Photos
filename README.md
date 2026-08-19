@@ -1,98 +1,87 @@
 # MyZubster Photos
 
-**Canonical public evidence and photographic archive for the MyZubster ecosystem.**
+> 🌍 **Understand MyZubster in your language:** [Global multilingual guide](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/i18n/README.md) — English, Italiano, Español, Français, Deutsch, Português, 中文, 日本語, 한국어, العربية, हिन्दी, Русский, Türkçe, Bahasa Indonesia, Polski, Українська, বাংলা, اردو, فارسی, Kiswahili.
+>
+> **MyZubster is an open-source ecosystem that connects real-world observations, verifiable evidence, collaborative bounties and platform rewards.** MYZ is currently an internal reward/accounting ledger; external XMR/token/blockchain settlement is separate and independently verified.
 
-Questo repository non è una semplice raccolta di immagini.
+**Canonical public photographic evidence repository for the MyZubster ecosystem.**
 
-Le fotografie pubblicate qui possono rappresentare **artefatti di evidenza verificabili** collegati a osservazioni reali, dataset geografici, attività di ricerca autorizzata, contributi alla piattaforma e, quando previsto da una bounty, alla dimostrazione del lavoro svolto.
+These are not just pictures.
 
-Ogni foto può quindi essere collegata a più livelli di informazione:
+A MyZubster photo can be a verifiable evidence artifact connected to a real-world observation, public dataset, authorized research activity, contributor task or bounty deliverable. Its meaning comes from the combination of the image, metadata, cryptographic hash, provenance, review and — when applicable — reward and settlement records.
 
 ```text
-FOTO / OSSERVAZIONE REALE
-        |
-        v
-FILE SANITIZZATO
-        |
-        v
-SHA-256 + METADATI + PROVENIENZA
-        |
-        v
-OSSERVAZIONE / BOUNTY / DELIVERABLE
-        |
-        v
-REVIEW CONTRO I CRITERI DI ACCETTAZIONE
-        |
-        v
-VERIFIED
-        |
-        v
-REWARD_RECORDED IN MYZ
-        |
-        +------------------------------+
-        |                              |
-        v                              v
-MYZ INTERNAL LEDGER            OPTIONAL EXTERNAL SETTLEMENT
-                               XMR / TOKEN / BLOCKCHAIN
-                                      |
-                                      v
-                              INDEPENDENT VERIFICATION
-                                      |
-                                      v
-                                  PAID / SETTLED
+REAL-WORLD PHOTO / OBSERVATION
+            ↓
+      SANITIZED FILE
+            ↓
+ SHA-256 + METADATA + PROVENANCE
+            ↓
+ OBSERVATION / BOUNTY / DELIVERABLE
+            ↓
+   REVIEW AGAINST ACCEPTANCE RULES
+            ↓
+         VERIFIED
+            ↓
+    REWARD_RECORDED (MYZ)
+            ↓
+     MYZ INTERNAL LEDGER
+            ↓
+ OPTIONAL EXTERNAL SETTLEMENT
+      XMR / TOKEN / CHAIN
+            ↓
+  INDEPENDENT VERIFICATION
+            ↓
+       PAID / SETTLED
 ```
 
-> **Principio fondamentale:** una fotografia può essere una prova del lavoro, ma la sua sola presenza in questo repository non significa automaticamente che una bounty sia stata verificata, che un reward sia stato assegnato o che un pagamento blockchain sia avvenuto.
+> **Core rule:** a photo can be evidence of work, but the presence of a photo in this repository does not automatically prove bounty verification, reward assignment or blockchain payment.
 
 ---
 
-## 1. Cosa rappresentano queste fotografie
+## 1. What a MyZubster photo can represent
 
-Una fotografia MyZubster può essere contemporaneamente:
+A public photo may be:
 
-- una **osservazione del mondo reale**;
-- una **prova fotografica** collegata a un'attività autorizzata;
-- un elemento di un dataset geografico o ambientale;
-- un deliverable richiesto da una bounty;
-- un artefatto identificabile tramite hash crittografico;
-- una fonte per mappe, timeline, gallery e registry MyZubster;
-- un elemento di provenienza collegato a Git/GitHub;
-- un contenuto eventualmente indirizzabile tramite IPFS/CID;
-- un riferimento per una bounty successivamente verificata;
-- un artefatto collegabile a un reward registrato nel ledger MYZ;
-- quando realmente previsto e verificato, un artefatto collegabile anche a un settlement esterno XMR/token/blockchain.
+- a real-world observation;
+- authorized photographic evidence;
+- part of a geographic or environmental dataset;
+- a bounty deliverable;
+- an artifact identified by a cryptographic hash;
+- a source for maps, timelines, galleries or registries;
+- a Git/GitHub provenance record;
+- content that may also be addressed through IPFS/CID;
+- evidence linked to a later verified bounty;
+- evidence linked to a reward recorded in the MYZ internal ledger;
+- when independently verified, evidence associated with an external XMR/token/blockchain settlement.
 
-Quindi **l'immagine è il contenuto visibile**, mentre il valore di verifica deriva dall'insieme di immagine, metadati, hash, provenienza, criteri della bounty e review.
+The image is the visible content. Verification value comes from the **image + metadata + hash + provenance + acceptance criteria + review**.
 
 ---
 
-## 2. Repository canonico
-
-Repository:
+## 2. Canonical repository
 
 ```text
 MyZubster-Ecosystem/MyZubster-Photos
 ```
 
-Le fotografie reali pubbliche vengono centralizzate qui invece di essere distribuite nei repository applicativi.
+Public real-world photographs are centralized here instead of being duplicated throughout application repositories.
 
-Il core MyZubster può continuare a conservare:
+The MyZubster core may store:
 
-- registry delle osservazioni;
-- riferimenti ai media;
-- coordinate autorizzate;
-- stato dell'osservazione;
-- bounty ID;
-- reward reference;
-- settlement reference quando applicabile.
+- observation records;
+- media references;
+- authorized coordinates;
+- observation state;
+- bounty references;
+- reward references;
+- settlement references when applicable.
 
-Il file fotografico canonico vive invece in questo repository.
+The canonical public photographic file belongs in this repository.
 
 ---
 
-## 3. Struttura
-
-Struttura generale prevista:
+## 3. Repository structure
 
 ```text
 MyZubster-Photos/
@@ -121,54 +110,52 @@ MyZubster-Photos/
 └── scripts/
 ```
 
-La struttura geografica può essere usata quando il luogo è pubblico e la precisione pubblicata è appropriata.
+Geographic paths are used only when the location is appropriate for public disclosure.
 
 ---
 
-## 4. Metadati: perché sono importanti
+## 4. Metadata model
 
-Una foto senza contesto è soltanto un file binario.
+A photo without context is only a binary file. A MyZubster evidence record can explain what the file represents, where it came from, which exact bytes were reviewed and what workflow it belongs to.
 
-Una foto MyZubster può invece avere un record strutturato che permette di capire **cosa rappresenta, da dove proviene, quale file esatto è stato verificato e a quale lavoro è eventualmente collegata**.
+Possible fields include:
 
-Un record può includere, dove applicabile:
-
-| Campo | Significato |
+| Field | Meaning |
 |---|---|
-| `photoId` / `observation_id` | identificatore stabile dell'evidenza |
-| `filename` | nome canonico del file |
-| `destinationPath` | percorso pubblico nel repository Photos |
-| `sha256` | impronta crittografica del file esatto |
-| `sizeBytes` | dimensione del file verificato |
-| `mimeType` | tipo MIME |
-| `category` | categoria dell'osservazione |
-| `capturedAt` | data/ora di acquisizione, solo se realmente disponibile |
-| `publishedAt` | data di pubblicazione |
-| `city` / `region` / `country` | localizzazione pubblicabile |
-| `latitude` / `longitude` | coordinate solo quando autorizzate e appropriate |
-| `source` | provenienza dichiarata |
-| `repositoryCommit` | commit Git che registra il cambiamento |
-| `cid` | eventuale CID IPFS del contenuto |
-| `metadataCid` | eventuale CID del record metadata |
-| `bountyId` | bounty collegata, se esiste |
-| `evidenceStatus` | stato della prova |
-| `reviewStatus` | stato della review |
-| `rewardAsset` | MYZ/XMR/token previsto dalla bounty |
-| `rewardAmount` | quantità prevista/registrata |
-| `rewardRecordId` | riferimento al ledger interno MyZubster |
-| `settlementStatus` | stato del settlement esterno |
-| `network` | blockchain/network, solo se esiste un settlement esterno |
-| `txHash` | transaction hash verificato, solo quando realmente disponibile |
+| `photoId` / `observationId` | stable evidence identifier |
+| `filename` | canonical filename |
+| `destinationPath` | canonical path in this repository |
+| `sha256` | cryptographic fingerprint of the exact file |
+| `sizeBytes` | verified byte size |
+| `mimeType` | media type |
+| `category` | observation/evidence category |
+| `capturedAt` | capture date/time only when actually known |
+| `publishedAt` | publication timestamp |
+| `city` / `region` / `country` | publishable location metadata |
+| `latitude` / `longitude` | coordinates only when authorized and appropriate |
+| `source` | declared provenance |
+| `repositoryCommit` | Git commit recording the artifact/state |
+| `cid` | optional IPFS content identifier |
+| `metadataCid` | optional CID for metadata |
+| `bountyId` | linked bounty, if any |
+| `evidenceStatus` | evidence lifecycle state |
+| `reviewStatus` | review state |
+| `rewardAsset` | MYZ/XMR/token declared by the bounty |
+| `rewardAmount` | declared or recorded amount |
+| `rewardRecordId` | internal MyZubster ledger reference |
+| `settlementStatus` | external settlement state |
+| `network` | external chain/network only when applicable |
+| `txHash` | independently verified transaction identifier only when available |
 
-I campi sconosciuti devono rimanere `null` o assenti. **Non devono essere inventati.**
+Unknown values remain `null` or absent. **They must never be invented.**
 
 ---
 
-## 5. SHA-256: identità crittografica della foto
+## 5. SHA-256 and file identity
 
-Ogni foto pubblicata dovrebbe avere un digest SHA-256.
+Published evidence should have a SHA-256 digest.
 
-Esempio:
+Example:
 
 ```json
 {
@@ -178,33 +165,27 @@ Esempio:
 }
 ```
 
-Lo SHA-256 permette di verificare che due sistemi stiano parlando **dello stesso identico file**.
-
-Se anche un solo byte cambia, cambia anche l'hash.
-
-Questo consente di collegare in modo deterministico:
+SHA-256 lets independent systems verify that they are referring to the **same exact file**. If one byte changes, the hash changes.
 
 ```text
-foto
-  <-> SHA-256
-  <-> metadata
-  <-> observation record
-  <-> bounty evidence
-  <-> review
-  <-> reward record
+photo
+  ↔ SHA-256
+  ↔ metadata
+  ↔ observation record
+  ↔ bounty evidence
+  ↔ review
+  ↔ reward record
 ```
 
-Lo SHA-256 però **non dimostra da solo che la bounty è stata completata**. Dimostra l'identità del contenuto verificato.
+A hash proves file identity. It does **not** by itself prove that a bounty was completed.
 
 ---
 
-## 6. Sanitizzazione e privacy
+## 6. Privacy and sanitization
 
-Il repository è pubblico.
+This is a public repository. Images intended for publication must be reviewed and, when necessary, re-encoded before entering the canonical archive.
 
-Le immagini destinate alla pubblicazione devono essere sottoposte a controllo privacy e, quando necessario, ricodificate prima dell'ingresso nel repository canonico.
-
-La pipeline attuale può registrare proprietà come:
+Metadata may record properties such as:
 
 ```json
 {
@@ -215,47 +196,46 @@ La pipeline attuale può registrare proprietà come:
 }
 ```
 
-### Non devono essere pubblicati automaticamente
+Do not automatically publish:
 
-- EXIF non revisionato;
-- GPS incorporato non necessario;
-- JWT, token o credenziali;
-- seed o chiavi private;
-- percorsi filesystem locali;
-- identificatori privati degli utenti;
-- infrastruttura sensibile;
-- luoghi privati/restricted non autorizzati;
-- materiale di review confidenziale;
-- raw uploads non revisionati.
+- unreviewed EXIF;
+- unnecessary embedded GPS;
+- JWTs, tokens or credentials;
+- wallet seeds or private keys;
+- local filesystem paths;
+- private user identifiers;
+- sensitive infrastructure;
+- unauthorized private/restricted locations;
+- confidential review material;
+- unreviewed raw uploads.
 
-La rimozione EXIF/GPS dal file non significa che qualsiasi contenuto visibile nella fotografia sia automaticamente sicuro: il contenuto deve comunque essere appropriato per la pubblicazione.
+Removing EXIF/GPS does not automatically make the visible content safe. The actual image content must also be suitable for public publication.
 
 ---
 
-## 7. Migrazione verificata dal core MyZubster
+## 7. Verified migration from MyZubster core
 
-Una prima migrazione canonica ha trasferito **12 fotografie già pubbliche** dal core MyZubster a questo repository.
+The first canonical migration moved **12 already-public photographs** from the MyZubster core into this repository as sanitized copies.
 
-Il manifest è:
+Machine-readable evidence is stored in:
 
 ```text
 metadata/github-core-migration.json
 ```
 
-Il manifest registra:
+The manifest records:
 
-- repository sorgente;
-- branch sorgente;
-- percorso sorgente;
-- percorso destinazione;
-- numero di file;
-- SHA-256 di ogni copia sanitizzata;
-- dimensione in byte;
-- stato privacy;
-- rimozione del file sorgente dal core;
-- commit che ha completato lo spostamento.
+- source repository and branch;
+- source path;
+- destination path;
+- file count;
+- SHA-256 of each sanitized copy;
+- file size;
+- privacy state;
+- source deletion state;
+- core commit completing the move.
 
-Stato registrato:
+Recorded migration state includes:
 
 ```json
 {
@@ -266,80 +246,76 @@ Stato registrato:
 }
 ```
 
-Il core MyZubster usa ora gli URL del repository Photos e gli SHA-256 delle versioni sanificate.
+The MyZubster core registry now references the Photos repository and the SHA-256 hashes of the sanitized versions.
 
 ---
 
-## 8. Foto come evidence di una bounty
+## 8. Photos as bounty evidence
 
-Una bounty MyZubster rappresenta **lavoro verificabile**.
+A MyZubster bounty represents **verifiable work**.
 
-Per una bounty fotografica, la foto può essere uno degli elementi richiesti dai criteri di accettazione.
+For a photo bounty, acceptance criteria may require:
 
-Esempi di criteri possibili:
+- a minimum number of photographs;
+- a specific subject;
+- a public/authorized area;
+- minimum quality;
+- a caption or description;
+- allowed location precision;
+- an original-file requirement;
+- a timestamp when genuinely available;
+- absence of sensitive information;
+- compliance with privacy and safety rules.
 
-- numero minimo di fotografie;
-- soggetto richiesto;
-- area pubblica/autorizzata;
-- qualità minima;
-- caption o descrizione;
-- coordinate consentite;
-- original-file requirement;
-- timestamp, quando realmente disponibile;
-- assenza di informazioni sensibili;
-- rispetto delle regole di sicurezza e privacy.
-
-La catena logica corretta è:
+Correct logic:
 
 ```text
-bounty definita
-   -> contributor raccoglie evidence
-   -> foto + metadata vengono presentati
-   -> review contro acceptance criteria
-   -> VERIFIED
-   -> reward registrato
+bounty defined
+  → contributor collects evidence
+  → photo + metadata submitted
+  → review against acceptance criteria
+  → VERIFIED
+  → reward recorded
 ```
 
-Non è corretta questa equivalenza:
+Incorrect logic:
 
 ```text
-foto caricata = bounty completata = pagamento eseguito
+photo uploaded = bounty completed = payment executed
 ```
 
 ---
 
-## 9. Lifecycle ufficiale della bounty
-
-Il lifecycle canonico MyZubster è:
+## 9. Canonical bounty lifecycle
 
 ```text
 PROPOSED
-  -> VALIDATED
-  -> APPROVED
-  -> FUNDED          # quando serve una funding reservation
-  -> ACTIVE
-  -> SUBMITTED
-  -> UNDER_REVIEW
-  -> VERIFIED | REJECTED
-  -> REWARD_RECORDED
-  -> SETTLEMENT_PENDING | SETTLED/PAID
+  → VALIDATED
+  → APPROVED
+  → FUNDED          # when funding reservation is required
+  → ACTIVE
+  → SUBMITTED
+  → UNDER_REVIEW
+  → VERIFIED | REJECTED
+  → REWARD_RECORDED
+  → SETTLEMENT_PENDING | SETTLED / PAID
 ```
 
-Per una foto bounty, il file può entrare come evidence durante `SUBMITTED`.
+A photo can become evidence at `SUBMITTED`. `VERIFIED` requires an actual review against the bounty's acceptance criteria.
 
-Il passaggio a `VERIFIED` richiede una review reale contro i criteri della bounty.
+A GitHub merge, a closed issue or a file in this repository does not replace verification.
 
-Un merge GitHub, un issue chiuso o una foto presente nel repository **non sostituiscono questa verifica**.
+Canonical policy: [MyZubster Bounty System](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/BOUNTIES.md).
 
 ---
 
-## 10. MYZ e completamento bounty
+## 10. MYZ and bounty completion
 
-### Stato attuale di MYZ
+### Current MYZ model
 
-**MYZ è attualmente una unità di reward/accounting registrata nel ledger interno della piattaforma MyZubster.**
+**MYZ is currently an internal reward/accounting ledger unit in the MyZubster platform.**
 
-Quando una bounty viene verificata, il sistema può registrare un reward MYZ, ad esempio:
+After a bounty is verified, an internal reward record may look like:
 
 ```json
 {
@@ -352,58 +328,41 @@ Quando una bounty viene verificata, il sistema può registrare un reward MYZ, ad
 }
 ```
 
-Questo record significa che il reward è stato **registrato nella contabilità/ledger MyZubster**.
+This means the reward was recorded in MyZubster's internal accounting/reward ledger.
 
-Non significa automaticamente che sia avvenuta una transazione su una blockchain pubblica.
-
-### Collegamento evidence -> MYZ
-
-Il modello concettuale è:
+It does **not** automatically mean a public blockchain transaction occurred.
 
 ```text
 photoId
-   |
-   +-- sha256
-   +-- metadata
-   +-- observationId
-   +-- bountyId
-           |
-           v
-        VERIFIED
-           |
-           v
-    rewardRecordId
-           |
-           v
-        amount MYZ
-           |
-           v
-    MyZubster internal ledger
+  ├─ sha256
+  ├─ metadata
+  ├─ observationId
+  └─ bountyId
+        ↓
+     VERIFIED
+        ↓
+  rewardRecordId
+        ↓
+     amount MYZ
+        ↓
+ MyZubster internal ledger
 ```
 
-Questo crea una **catena di audit applicativa** tra evidenza e reward.
+This creates an auditable application-level chain between evidence and reward.
 
 ---
 
-## 11. Blockchain: cosa può essere registrato e cosa no
+## 11. Blockchain and external settlement
 
-È importante distinguere **MYZ ledger** da una **blockchain esterna**.
-
-### MYZ
-
-Attualmente:
+MYZ and an external blockchain are different layers.
 
 ```text
 MYZ = internal-platform-ledger
 ```
 
-Quindi un reward MYZ non deve essere descritto come `on-chain` senza una prova blockchain indipendente.
+A MYZ reward must not be described as `on-chain` unless independent chain evidence actually exists.
 
-### Settlement esterno
-
-Una bounty può eventualmente prevedere XMR o un token blockchain oltre a MYZ.
-
-In quel caso, il record di settlement può includere:
+A bounty may separately include XMR or a blockchain token. In that case, settlement metadata may include:
 
 ```json
 {
@@ -418,34 +377,32 @@ In quel caso, il record di settlement può includere:
 }
 ```
 
-Per poter dichiarare `PAID` o `SETTLED`, il sistema deve verificare in modo indipendente almeno, quando applicabile:
+Before declaring `PAID` or `SETTLED`, independent verification should confirm, where applicable:
 
-- destinatario previsto;
-- asset corretto;
-- network/chain corretta;
-- contract address del token;
-- amount canonico;
-- transaction hash;
-- stato della transazione;
-- conferme richieste.
+- intended recipient;
+- correct asset;
+- correct network/chain;
+- token contract/asset identity;
+- canonical amount;
+- transaction identifier;
+- transaction status;
+- required confirmations.
 
-Un `txHash` non deve mai essere inventato.
+A `txHash` must never be invented.
 
 ---
 
-## 12. Settlement lifecycle
-
-Il settlement esterno è separato dalla verifica della bounty:
+## 12. External settlement lifecycle
 
 ```text
 PENDING
-  -> RESERVED / ACCEPTED
-  -> SUBMITTED
-  -> CONFIRMED
-  -> PAID
+  → RESERVED / ACCEPTED
+  → SUBMITTED
+  → CONFIRMED
+  → PAID
 ```
 
-Possibili stati di eccezione:
+Exception/reconciliation states can include:
 
 ```text
 FAILED
@@ -454,7 +411,7 @@ DISPUTED
 CANCELLED
 ```
 
-Questo significa che può esistere una situazione perfettamente valida come:
+A valid state can therefore be:
 
 ```text
 Bounty: VERIFIED
@@ -462,50 +419,37 @@ MYZ reward: REWARD_RECORDED
 External settlement: PENDING
 ```
 
-La bounty è stata verificata e il reward interno registrato, ma il pagamento esterno non è ancora stato confermato.
+The work is verified and the internal reward recorded, while external payment is still awaiting confirmation.
 
 ---
 
-## 13. Git, GitHub, hash e blockchain sono livelli diversi
+## 13. Git, SHA-256, IPFS, MYZ and blockchain are different layers
 
-MyZubster utilizza più strumenti di audit, ma non devono essere confusi.
+### Git / GitHub
 
-### Git/GitHub
-
-Registrano:
-
-- storia dei cambiamenti;
-- commit;
-- review;
-- PR;
-- provenienza repository;
-- timestamp della storia Git.
+Provides change history, commits, reviews, pull requests and repository provenance.
 
 ### SHA-256
 
-Identifica il contenuto esatto del file.
+Identifies the exact file bytes.
 
-### IPFS/CID
+### IPFS / CID
 
-Quando utilizzato, rende il contenuto indirizzabile tramite il suo contenuto.
-
-Un CID dimostra quale contenuto è recuperato, non che una bounty sia stata verificata.
+When used, content-addresses a specific object. A CID identifies content; it does not prove bounty acceptance.
 
 ### MYZ ledger
 
-Registra la contabilità/reward interno della piattaforma.
+Records internal platform reward/accounting state.
 
-### Blockchain esterna
+### External blockchain/payment rail
 
-Quando realmente utilizzata per un settlement, registra una transazione sul network specifico e richiede verifica indipendente.
+When actually used, records settlement on a specific external network and requires independent verification.
 
-Questi livelli possono essere collegati, ma **uno non sostituisce automaticamente gli altri**.
+These layers can reference each other, but one does not automatically prove the others.
 
 ---
 
-## 14. Modello completo di evidence record
-
-Un record esteso futuro può assumere questa forma:
+## 14. Example extended evidence record
 
 ```json
 {
@@ -513,212 +457,123 @@ Un record esteso futuro può assumere questa forma:
   "photoId": "rimini-example-001",
   "observationId": "rimini-example-001",
   "path": "photos/italy/emilia-romagna/rimini/example/example-001.jpg",
-  "mimeType": "image/jpeg",
   "sha256": "...",
   "sizeBytes": 123456,
   "privacy": {
-    "reviewed": true,
     "exifStripped": true,
     "gpsMetadataPublished": false
   },
   "provenance": {
     "repository": "MyZubster-Ecosystem/MyZubster-Photos",
-    "commit": "...",
-    "cid": null,
-    "metadataCid": null
+    "commit": "..."
   },
   "bounty": {
     "bountyId": null,
     "evidenceStatus": "PUBLISHED",
-    "reviewStatus": null,
-    "verifiedAt": null
+    "reviewStatus": null
   },
   "reward": {
     "rewardRecordId": null,
-    "asset": "MYZ",
+    "asset": null,
     "amount": null,
-    "ledger": "internal-platform-ledger",
-    "status": null
+    "myzModel": "internal-platform-ledger"
   },
   "settlement": {
-    "required": false,
-    "asset": null,
+    "status": null,
     "network": null,
-    "txHash": null,
-    "status": null
+    "txHash": null
   }
 }
 ```
 
-Questo schema rende evidente la separazione tra **foto**, **verifica**, **reward** e **settlement**.
+Null means unknown/not applicable — not failed, paid or verified.
 
 ---
 
-## 15. Esempio di catena di prova completa
+## 15. What this repository proves — and what it does not
 
-Una bounty fotografica può produrre una catena verificabile di questo tipo:
+### It can prove or support
 
-```text
-1. Bounty #123 definisce cosa fotografare
-2. Contributor produce la fotografia
-3. La fotografia viene sanitizzata
-4. Viene calcolato SHA-256
-5. Il file entra in MyZubster-Photos
-6. Il metadata record collega photoId + SHA-256 + bountyId
-7. La submission entra in UNDER_REVIEW
-8. Un reviewer controlla acceptance criteria + evidence
-9. La bounty passa a VERIFIED
-10. Il reward viene scritto nel ledger MYZ -> REWARD_RECORDED
-11. Se esiste un reward esterno:
-      SETTLEMENT_PENDING
-      -> transaction submitted
-      -> independent verification
-      -> SETTLED / PAID
-```
+- that a specific public file exists in Git history;
+- its canonical repository path;
+- its SHA-256 identity;
+- its machine-readable metadata;
+- recorded migration/provenance facts;
+- that it has been published as potential evidence;
+- linkage to a bounty/reward/settlement record when such references exist.
 
-È questa catena che rende la fotografia **parte di un sistema di evidence e reward**, e non una semplice immagine caricata online.
+### It does not automatically prove
+
+- authorship of the real-world scene;
+- exact capture time when not independently available;
+- exact GPS location when not verified;
+- bounty acceptance;
+- MYZ reward approval;
+- external payment;
+- blockchain settlement.
+
+Those require their own evidence and lifecycle states.
 
 ---
 
-## 16. Sicurezza delle photo bounty
+## 16. Safety rules for physical/photo bounties
 
-Una bounty non deve richiedere o premiare:
+MyZubster photo work must not require or reward:
 
 - trespassing;
-- ingresso in aree ristrette;
-- aggiramento di barriere o controlli d'accesso;
-- fotografie di sistemi di sicurezza sensibili;
-- infrastrutture critiche o dettagli operativi sensibili;
-- coordinate precise che creano rischi di sicurezza o privacy;
-- materiale confidenziale;
-- esposizione di persone o dati privati senza base appropriata.
+- entry into restricted/private areas;
+- bypassing barriers or access controls;
+- photographing sensitive security systems or operational infrastructure;
+- unsafe intervention on machinery/utilities;
+- confidential research collection;
+- unnecessary disclosure of private residences or sensitive locations;
+- publication of wallet secrets, credentials or personal data.
 
-L'osservazione da luoghi pubblici e autorizzati è il default.
-
----
-
-## 17. Policy per i raw uploads
-
-I raw uploads dell'applicazione non devono essere copiati automaticamente in questo repository pubblico.
-
-Prima della pubblicazione serve un passaggio di:
-
-```text
-raw upload
-   -> validation
-   -> privacy review
-   -> EXIF/GPS review
-   -> sanitization
-   -> SHA-256
-   -> publication
-```
+Public and authorized observation from safe locations is the default.
 
 ---
 
-## 18. File machine-readable
+## 17. Machine-readable sources
 
-### `metadata/photo-catalog.json`
+Important files include:
 
-Definisce categorie e policy generali del repository.
-
-La policy attuale prevede:
-
-```json
-{
-  "privacyReviewRequired": true,
-  "exifReviewRequired": true,
-  "rawUploadsAllowed": false
-}
-```
-
-### `metadata/github-core-migration.json`
-
-Audit della migrazione delle fotografie già pubblicate dal core MyZubster.
-
-Contiene per ogni foto:
-
-- `sourcePath`;
-- `destinationPath`;
-- `sha256`;
-- `sizeBytes`;
-- stato di sanitizzazione privacy.
-
-### `metadata/photos.json`
-
-Catalogo generato dal publisher per nuove fotografie sanificate.
-
-### `metadata/skipped.json`
-
-Registra eventuali file che il publisher non ha potuto o non ha voluto pubblicare.
+- [`metadata/photo-catalog.json`](metadata/photo-catalog.json) — repository category/publication policy catalog;
+- [`metadata/github-core-migration.json`](metadata/github-core-migration.json) — verified migration/provenance manifest;
+- [`docs/PHOTO-POLICY.md`](docs/PHOTO-POLICY.md) — photo publication and privacy policy;
+- [core `data/observations.json`](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/data/observations.json) — public observation records;
+- [canonical `BOUNTIES.md`](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/BOUNTIES.md) — authoritative bounty and settlement rules;
+- [ecosystem architecture](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/ECOSYSTEM.md) — repository boundaries and responsibilities.
 
 ---
 
-## 19. Principio di verificabilità
+## 18. Project status and transparency
 
-La filosofia del repository può essere riassunta così:
+MyZubster is an evolving open-source ecosystem. Documentation must distinguish:
 
-```text
-DON'T TRUST THE FILENAME.
-VERIFY THE CONTENT.
-VERIFY THE METADATA.
-VERIFY THE HASH.
-VERIFY THE BOUNTY.
-VERIFY THE REWARD RECORD.
-VERIFY THE EXTERNAL SETTLEMENT SEPARATELY.
-```
+- operational functionality;
+- development/validation;
+- prototypes and simulation;
+- planned features;
+- internal MYZ accounting;
+- independently verified external settlement.
 
-MyZubster vuole conservare una storia verificabile che permetta di rispondere a domande concrete:
-
-- Quale fotografia è stata presentata?
-- Qual è il suo hash?
-- Da dove proviene?
-- Quando è stata pubblicata?
-- A quale osservazione appartiene?
-- Era collegata a una bounty?
-- Quali acceptance criteria sono stati verificati?
-- Chi/che cosa ha registrato lo stato VERIFIED?
-- È stato registrato un reward MYZ?
-- Esiste un settlement esterno?
-- Se sì, qual è la prova indipendente della transazione?
+Historical issues, labels, reward amounts, commits or screenshots are project evidence/context, but are not automatic proof of deployment, funding or payment.
 
 ---
 
-## 20. Regola finale
+## 19. Contributing translations
 
-**Queste non sono semplici foto.**
+The global guide is maintained here:
 
-Sono potenziali **unità di evidenza digitale** collegate al mondo reale e inserite in un sistema che può combinare:
+**[MyZubster Universal / Multilingual Guide](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/i18n/README.md)**
 
-```text
-REAL-WORLD OBSERVATION
-+ PUBLIC PHOTO
-+ SANITIZED METADATA
-+ SHA-256 INTEGRITY
-+ GIT PROVENANCE
-+ OPTIONAL IPFS CONTENT ADDRESSING
-+ BOUNTY EVIDENCE
-+ HUMAN / AUTHORIZED REVIEW
-+ MYZ REWARD ACCOUNTING
-+ OPTIONAL VERIFIED BLOCKCHAIN SETTLEMENT
-```
+Human translations are welcome. Every translation must preserve the same technical truth, especially:
 
-Ma ogni livello deve essere dichiarato solo quando esiste realmente.
+1. evidence is not automatic bounty verification;
+2. MYZ is currently an internal reward/accounting ledger;
+3. MYZ is not automatically an on-chain transfer;
+4. external settlement is separate;
+5. `PAID`/`SETTLED` requires independent verification;
+6. privacy, authorization and safety remain mandatory.
 
-In particolare:
-
-- **photo published != bounty verified**
-- **PR merged != bounty verified**
-- **bounty verified != external payment completed**
-- **MYZ reward recorded != on-chain transaction**
-- **transaction submitted != PAID**
-- **PAID/SETTLED requires independent verification**
-
-Questa separazione rende l'intero sistema più auditabile, più sicuro e più credibile.
-
----
-
-## MyZubster
-
-**MyZubster-Photos** è il layer canonico per le fotografie pubbliche e gli artefatti visuali di evidenza reale.
-
-Il valore non è soltanto nell'immagine: è nella relazione verificabile tra **contenuto, metadata, integrità, provenienza, bounty, reward e — quando realmente presente — settlement esterno verificato**.
+If a language is not yet listed, browser translation can be used as an accessibility fallback until a reviewed human translation is contributed.
