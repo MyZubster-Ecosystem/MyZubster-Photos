@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "MyZubster GPS Photo Bounty Metadata",
+  "description": "Public-safe schema example for photographic bounty evidence with controlled location metadata and external XMR settlement tracking.",
+  "required": [
+    "photoId",
+    "path",
+    "mimeType",
+    "sizeBytes",
+    "sha256",
+    "location",
+    "privacy",
+    "verification",
+    "settlement"
+  ],
+  "locationModes": [
+    "none",
+    "city",
+    "approximate",
+    "exact-public"
+  ],
+  "verificationStatuses": [
+    "PROPOSED",
+    "ACTIVE",
+    "SUBMITTED",
+    "UNDER_REVIEW",
+    "VERIFIED",
+    "REJECTED"
+  ],
+  "settlementStatuses": [
+    "PENDING",
+    "RESERVED",
+    "ACCEPTED",
+    "SUBMITTED",
+    "CONFIRMED",
+    "PAID",
+    "FAILED",
+    "UNSETTLED",
+    "DISPUTED",
+    "CANCELLED"
+  ],
+  "example": {
+    "photoId": "daniel-rimini-001",
+    "creatorAlias": "Daniel Ioni",
+    "path": "photos/example.jpg",
+    "mimeType": "image/jpeg",
+    "sizeBytes": 123456,
+    "sha256": "<sha256>",
+    "publishedAt": null,
+    "location": {
+      "mode": "approximate",
+      "city": "Rimini",
+      "region": "Emilia-Romagna",
+      "country": "Italy",
+      "latitude": null,
+      "longitude": null,
+      "precisionMeters": null
+    },
+    "privacy": {
+      "exifStripped": true,
+      "gpsMetadataPublished": false,
+      "humanReviewRequired": true
+    },
+    "links": {
+      "observationId": null,
+      "discoveryId": null,
+      "storyId": null,
+      "episodeId": null,
+      "bountyId": null,
+      "cid": null,
+      "gitCommit": null
+    },
+    "verification": {
+      "status": "PROPOSED",
+      "reviewMode": "manual"
+    },
+    "settlement": {
+      "asset": "XMR",
+      "amount": null,
+      "status": "PENDING",
+      "txId": null
+    }
+  }
+}
