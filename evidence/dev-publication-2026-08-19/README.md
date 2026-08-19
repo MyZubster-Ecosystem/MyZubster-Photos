@@ -1,13 +1,31 @@
 # MyZubster DEV publication evidence
 
-## Published article
+## Published articles
 
-- **Title:** MyZubster and the Shift Toward Decentralized Futures
+### MyZubster and the Shift Toward Decentralized Futures
+
 - **Author:** Daniel Ioni
 - **Publication date:** 19 August 2026
 - **Public URL:** https://dev.to/danielioni/myzubster-and-the-shift-toward-decentralized-futures-4p5m
 - **Tags:** `opensource`, `webdev`, `privacy`, `architecture`
 - **Series:** MyZubster: Decentralized Futures
+
+### How MyZubster Uses Monero to Preserve Its Bounty History
+
+- **Author:** Daniel Ioni
+- **Publication date:** 19 August 2026
+- **Public URL:** https://dev.to/danielioni/how-myzubster-uses-monero-to-preserve-its-bounty-history-91g
+- **Tags:** `monero`, `opensource`, `webdev`, `privacy`
+- **Purpose:** Explains the synchronize → verify → protect → document workflow used to preserve historical bounty evidence without exposing private wallet material.
+
+## Monero bounty history comic
+
+- **Repository path:** `04 Comic Visuals & Covers/myzubster-monero-bounty-comic.png`
+- **Google Drive:** https://drive.google.com/file/d/1KY_qfHOilz0OtzJEkilaBZ6cgWfzB7Ho/view?usp=drivesdk
+- **File size:** 2,932,868 bytes
+- **SHA-256:** `335f12e7a6a841d31d071ab0b332b326b233debc3527e30719a1a1a14f0dcb4c`
+
+The visual contains no real wallet addresses, seeds, private keys, amounts, transaction identifiers, passwords, QR codes, or personal data.
 
 ## Evidence archive
 
@@ -20,7 +38,7 @@ The same SHA-256 was verified for the local copy, the Google Drive download, and
 
 ## Archive contents
 
-- `dev-article-proof.png` — full-page screenshot of the published article.
+- `dev-article-proof.png` — full-page screenshot of the first published article.
 - `cover.png` — original article cover.
 - `README.md` — evidence manifest and verification scope.
 
@@ -35,6 +53,8 @@ The same SHA-256 was verified for the local copy, the Google Drive download, and
 
 A historical Facebook post on the MyZubster bot ecosystem includes a GitHub Bounty Bot visual. The recovered local `07 Bounties & Rewards` archive contains no bounty specification, reward amount, or completion criteria.
 
-## Verification scope
+## Verification and privacy scope
 
-This evidence proves that the DEV article was publicly accessible with the stated author, title, cover, and tags. It does not independently establish eligibility for an older bounty whose original rules are unavailable.
+This evidence proves that the listed DEV articles and visual artifacts were publicly accessible with the stated metadata. Transaction references may support individual bounty records, but Monero is not treated as a publicly readable narrative database. No seed phrase, private spend key, private view key, wallet password, or recovery material belongs in this repository.
+
+This evidence does not independently establish eligibility for an older bounty whose original rules are unavailable.
