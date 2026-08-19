@@ -2,16 +2,15 @@ name: Migrate existing GitHub photos
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/migrate-existing-github-photos.yml'
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   migrate:
+    if: github.event_name == 'workflow_dispatch' || github.event.issue.title == 'Run sanitized GitHub photo migration'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout photo repository
