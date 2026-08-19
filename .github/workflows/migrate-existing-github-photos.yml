@@ -3,7 +3,7 @@ name: Migrate existing GitHub photos
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -21,7 +21,19 @@ jobs:
           ref: ${{ env.TARGET_BRANCH }}
           path: photos-repo
 
+      - name: Check whether migration is already present
+        id: migration_state
+        working-directory: photos-repo
+        run: |
+          if [ -f metadata/github-core-migration.json ]; then
+            echo 'needed=false' >> "$GITHUB_OUTPUT"
+            echo 'Migration manifest already present; no new migration commit needed.'
+          else
+            echo 'needed=true' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout MyZubster core
+        if: steps.migration_state.outputs.needed == 'true'
         uses: actions/checkout@v4
         with:
           repository: MyZubster-Ecosystem/myzubster
@@ -29,20 +41,24 @@ jobs:
           path: source-repo
 
       - name: Set up Python
+        if: steps.migration_state.outputs.needed == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install image sanitizer
+        if: steps.migration_state.outputs.needed == 'true'
         run: python -m pip install --disable-pip-version-check Pillow==11.3.0
 
       - name: Migrate sanitized public photos
+        if: steps.migration_state.outputs.needed == 'true'
         run: |
           python photos-repo/scripts/migrate-github-public-photos.py \
             --source source-repo/public/media/rimini \
             --repo photos-repo
 
       - name: Validate migration manifest
+        if: steps.migration_state.outputs.needed == 'true'
         working-directory: photos-repo
         run: |
           python - <<'PY'
@@ -57,9 +73,10 @@ jobs:
           PY
 
       - name: Commit migration to target branch
+        if: steps.migration_state.outputs.needed == 'true'
         working-directory: photos-repo
         run: |
-          if git diff --quiet -- photos metadata/github-core-migration.json; then
+          if [ -z "$(git status --porcelain -- photos metadata/github-core-migration.json)" ]; then
             echo 'No migration changes to commit.'
             exit 0
           fi
