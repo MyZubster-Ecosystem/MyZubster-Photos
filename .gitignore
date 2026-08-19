@@ -1,0 +1,7 @@
+raw/
+private/
+uploads/
+*.env
+.env*
+*.key
+*.pem

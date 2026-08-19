@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "ecosystem": "MyZubster",
+  "repository": "MyZubster-Ecosystem/MyZubster-Photos",
+  "visibility": "public",
+  "categories": {
+    "plants": "photos/plants",
+    "gardens": "photos/gardens",
+    "urban": "photos/urban",
+    "nature": "photos/nature",
+    "heritage": "photos/heritage",
+    "robots": "photos/robots",
+    "observations": "photos/observations",
+    "bounties": "photos/bounties"
+  },
+  "publicationPolicy": {
+    "privacyReviewRequired": true,
+    "exifReviewRequired": true,
+    "rawUploadsAllowed": false
+  }
+}
