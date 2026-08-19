@@ -9,7 +9,8 @@
   },
   "destination": "MyZubster-Ecosystem/MyZubster-Photos",
   "mode": "sanitized-copy",
-  "sourceDeletion": false,
+  "sourceDeletion": true,
+  "sourceDeletionCommit": "edd564aeede93b9049ec184e815e05da33f0497a",
   "count": 12,
   "photos": [
     {
