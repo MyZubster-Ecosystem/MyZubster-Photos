@@ -577,3 +577,11 @@ Human translations are welcome. Every translation must preserve the same technic
 6. privacy, authorization and safety remain mandatory.
 
 If a language is not yet listed, browser translation can be used as an accessibility fallback until a reviewed human translation is contributed.
+
+---
+
+## Official project identity
+
+MyZubster is maintained within the [MyZubster-Ecosystem](https://github.com/MyZubster-Ecosystem) organization. Canonical public administrator/maintainer reference: **[Daniel Ioni (@DanielIoni-creator)](https://github.com/DanielIoni-creator)**.
+
+This link is a stable public project-identity reference. By itself, it is not a cryptographic signature or legal identity certification.
